@@ -1,0 +1,305 @@
+        /* Estilo geral da página */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #DDE8E4;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #333333;
+        }
+
+        /* Caixa que envolve o site inteiro */
+        #site {
+            max-width: 1100px;
+            margin: 0 auto;
+            background-color: #FFFFFF;
+        }
+
+        /* ===== Cabeçalho ===== */
+        #header {
+            background-color: #1E6F5C;
+            color: white;
+            padding: 9px;
+            text-align: center;
+        }
+
+        #header h1 {
+            font-size: 32px;
+            margin: 10px 0 5px 0;
+        }
+
+        #header img {
+            vertical-align: middle;
+        }
+
+        #header p {
+            font-size: 16px;
+            color: #D4EFE6;
+            margin: 0 0 10px 0;
+        }
+
+        /* ===== Conteúdo (junta o menu e o main) ===== */
+        #conteudo {
+            background-color: #EAF4F1;
+        }
+
+        /* ===== Menu lateral ===== */
+        #menu {
+            float: left;
+            width: 20%;
+        }
+
+        #menu ul {
+            list-style: none;
+            margin: 0;
+            padding: 20px 10px;
+        }
+
+        #menu li {
+            margin-bottom: 8px;
+        }
+
+        #menu a {
+            display: block;
+            padding: 10px;
+            color: #1E6F5C;
+            font-weight: bold;
+            text-decoration: none;
+            border-left: 4px solid #EAF4F1;
+        }
+
+        #menu a:hover {
+            background-color: #CDE8DF;
+            border-left: 4px solid #1E6F5C;
+        }
+
+        /* Link da página que está aberta */
+        #menu a.ativo {
+            background-color: #1E6F5C;
+            color: white;
+            border-left: 4px solid #F39C12;
+        }
+
+        /* ===== Conteúdo principal ===== */
+        #main {
+            margin-left: 20%;
+            min-height: 450px;
+            padding: 20px 30px;
+            background-color: #FFFFFF;
+            line-height: 24px;
+        }
+
+        /* A cor e o tamanho do h2 estão no atributo style de cada página */
+        #main h2 {
+            border-bottom: 2px solid #1E6F5C;
+            padding-bottom: 8px;
+        }
+
+        #main h3 {
+            color: #145A4A;
+            margin-top: 28px;
+        }
+
+        #main a {
+            color: #1E6F5C;
+        }
+
+        /* Ícone ao lado do título da página */
+        #main h2 img {
+            vertical-align: middle;
+            margin-right: 8px;
+        }
+
+        /* ===== Caixas de destaque ===== */
+
+        /* Resposta rápida (verde) */
+        .rapido {
+            background-color: #E8F6F3;
+            border-left: 6px solid #1E6F5C;
+            padding: 5px 20px;
+            margin: 20px 0;
+        }
+
+        /* Atenção (amarela) */
+        .atencao {
+            background-color: #FEF5E7;
+            border-left: 6px solid #F39C12;
+            padding: 5px 20px;
+            margin: 20px 0;
+        }
+
+        /* Alerta (vermelha) */
+        .alerta {
+            background-color: #FDEDEC;
+            border-left: 6px solid #C0392B;
+            padding: 5px 20px;
+            margin: 20px 0;
+        }
+
+        /* Título dentro das caixas fica mais perto do topo */
+        #main .rapido h3,
+        #main .atencao h3,
+        #main .alerta h3 {
+            margin-top: 12px;
+        }
+
+        #main .alerta h3 {
+            color: #C0392B;
+        }
+
+        /* ===== Tabelas ===== */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+
+        th {
+            background-color: #1E6F5C;
+            color: white;
+            padding: 10px;
+            text-align: left;
+        }
+
+        td {
+            padding: 10px;
+            border-bottom: 1px solid #CCCCCC;
+            vertical-align: top;
+        }
+
+        /* Nome comercial embaixo do nome do remédio */
+        .exemplo {
+            display: block;
+            color: #777777;
+            font-size: 14px;
+        }
+
+        /* Tabela de sintomas da página inicial */
+        .sintomas td {
+            width: 33%;
+            text-align: center;
+            border: 1px solid #DDDDDD;
+            padding: 15px;
+        }
+
+        .sintomas a {
+            display: block;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            margin-top: 5px;
+        }
+
+        .sintomas a:hover {
+            color: #F39C12;
+        }
+
+        /* Quadro de emergência na tabela de sintomas */
+        .emergencia {
+            display: block;
+            font-size: 18px;
+            color: #C0392B;
+            margin-top: 5px;
+        }
+
+        .sintomas p {
+            margin: 5px 0 0 0;
+            font-size: 14px;
+            color: #666666;
+        }
+
+        /* Cores das tarjas */
+        .tarja {
+            display: block;
+            width: 140px;
+            padding: 6px;
+            text-align: center;
+            font-weight: bold;
+            border: 1px solid #999999;
+        }
+
+        .sem-tarja {
+            background-color: #FFFFFF;
+            color: #333333;
+        }
+
+        .tarja-vermelha {
+            background-color: #C0392B;
+            color: white;
+        }
+
+        .tarja-preta {
+            background-color: #000000;
+            color: white;
+        }
+
+        /* Texto das fontes no fim da página */
+        .fonte {
+            font-size: 13px;
+            color: #777777;
+            border-top: 1px solid #DDDDDD;
+            padding-top: 10px;
+            margin-top: 30px;
+        }
+
+        /* ===== Rodapé ===== */
+        #footer {
+            clear: both;
+            background-color: #1E6F5C;
+            color: white;
+            padding: 1px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        #footer p {
+            margin: 10px;
+        }
+
+        /* ===== Ajustes para celular (telas pequenas) ===== */
+        @media (max-width: 700px) {
+
+            #header h1 {
+                font-size: 24px;
+            }
+
+            /* O menu sai da lateral e vai para cima do conteúdo */
+            #menu {
+                float: none;
+                width: 100%;
+            }
+
+            #menu ul {
+                padding: 10px;
+                text-align: center;
+            }
+
+            #menu li {
+                display: inline-block;
+                margin: 3px;
+            }
+
+            #menu a,
+            #menu a:hover,
+            #menu a.ativo {
+                padding: 8px 10px;
+                border: 1px solid #CDE8DF;
+            }
+
+            #main {
+                margin-left: 0;
+                padding: 15px;
+            }
+
+            th,
+            td {
+                padding: 6px;
+                font-size: 14px;
+                line-height: 20px;
+            }
+
+            /* Na página inicial, cada sintoma fica em uma linha */
+            .sintomas td {
+                display: block;
+                width: auto;
+            }
+        }

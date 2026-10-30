@@ -11,31 +11,36 @@ remédios sem receita, os cuidados e quando é hora de procurar um médico.
 
 ## Páginas
 
-O site tem 6 páginas, todas dentro da pasta `html/`:
+O site tem 6 páginas. Cada página fica na pasta `html/` e tem o seu próprio arquivo de CSS na pasta `css/`:
 
-| Arquivo | Conteúdo |
-|---|---|
-| `html/index.html` | Página inicial com os sintomas, as tarjas dos remédios, cuidados gerais e telefones úteis |
-| `html/enjoo.html` | Enjoo e vômito |
-| `html/dor-e-febre.html` | Dor de cabeça e febre (com o alerta sobre dengue) |
-| `html/azia-gases-colica.html` | Azia, gases e cólica |
-| `html/diarreia.html` | Diarreia e hidratação |
-| `html/alergia.html` | Alergia |
+| Página | CSS | Conteúdo |
+|---|---|---|
+| `html/index.html` | `css/index.css` | Página inicial com os sintomas, as tarjas dos remédios, cuidados gerais e telefones úteis |
+| `html/enjoo.html` | `css/enjoo.css` | Enjoo e vômito |
+| `html/dor-e-febre.html` | `css/dor-e-febre.css` | Dor de cabeça e febre (com o alerta sobre dengue) |
+| `html/azia-gases-colica.html` | `css/azia-gases-colica.css` | Azia, gases e cólica |
+| `html/diarreia.html` | `css/diarreia.css` | Diarreia e hidratação |
+| `html/alergia.html` | `css/alergia.css` | Alergia |
 
 Todas as páginas têm o mesmo menu lateral, então dá para ir de qualquer página para qualquer outra.
 
 ## Organização das pastas
 
 ```
-guia-remedios/
-├── html/          páginas do site (cada uma com o seu CSS)
+GUIA-DE-REMEDIOS/
+├── html/          páginas do site
+├── css/           um arquivo de CSS para cada página
 ├── img/           ícones em SVG
 └── README.md
 ```
 
-O CSS de cada página fica dentro da própria página, na tag `<style>` do `<head>`.
-Como as páginas ficam dentro de `html/`, elas usam `../` para chegar nas imagens
-(exemplo: `<img src="../img/enjoo.svg">`).
+Cada página liga o seu CSS com a tag `<link>` dentro do `<head>`. Como as páginas ficam
+dentro de `html/`, elas usam `../` para voltar uma pasta e chegar no CSS e nas imagens:
+
+```html
+<link rel="stylesheet" href="../css/enjoo.css">
+<img src="../img/enjoo.svg" alt="" width="48">
+```
 
 ## Estrutura das páginas
 
@@ -53,7 +58,7 @@ div#site
 ## O que pratiquei
 
 - Layout com `div` e `id` (header, menu, main e footer)
-- CSS interno, com a tag `<style>` dentro do `<head>` de cada página
+- CSS externo, com um arquivo `.css` para cada página, ligado com `<link rel="stylesheet">`
 - Atributo `style` direto na tag (CSS inline) nos títulos e destaques de cada página
 - Cores em RGB (`rgb(30, 111, 92)`) e em hexadecimal
 - Seletores de tag, de id (`#menu`), de classe (`.alerta`) e de descendente (`#menu a`)
@@ -75,7 +80,7 @@ div#site
 
 1. Clone o repositório (ou baixe o arquivo .zip pelo botão "Code" do GitHub):
 ```bash
-git clone https://github.com/Dev-Jhonata-Batista/guia-remedios.git
+git clone https://github.com/Dev-Jhonata-Batista/GUIA-DE-REMEDIOS.git
 ```
 2. Entre na pasta do projeto.
 3. Abra o arquivo `html/index.html` no navegador (dois cliques no arquivo já funcionam).
