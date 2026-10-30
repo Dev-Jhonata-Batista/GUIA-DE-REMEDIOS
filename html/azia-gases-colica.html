@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azia, gases e cólica - Guia Rápido de Remédios</title>
+    <style>
+        /* ===== Estilos da página (CSS interno) ===== */
+
+        /* Estilo geral da página */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #DDE8E4;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #333333;
+        }
+
+        /* Caixa que envolve o site inteiro */
+        #site {
+            max-width: 1100px;
+            margin: 0 auto;
+            background-color: #FFFFFF;
+        }
+
+        /* ===== Cabeçalho ===== */
+        #header {
+            background-color: #1E6F5C;
+            color: white;
+            padding: 9px;
+            text-align: center;
+        }
+
+        #header h1 {
+            font-size: 32px;
+            margin: 10px 0 5px 0;
+        }
+
+        #header img {
+            vertical-align: middle;
+        }
+
+        #header p {
+            font-size: 16px;
+            color: #D4EFE6;
+            margin: 0 0 10px 0;
+        }
+
+        /* ===== Conteúdo (junta o menu e o main) ===== */
+        #conteudo {
+            background-color: #EAF4F1;
+        }
+
+        /* ===== Menu lateral ===== */
+        #menu {
+            float: left;
+            width: 20%;
+        }
+
+        #menu ul {
+            list-style: none;
+            margin: 0;
+            padding: 20px 10px;
+        }
+
+        #menu li {
+            margin-bottom: 8px;
+        }
+
+        #menu a {
+            display: block;
+            padding: 10px;
+            color: #1E6F5C;
+            font-weight: bold;
+            text-decoration: none;
+            border-left: 4px solid #EAF4F1;
+        }
+
+        #menu a:hover {
+            background-color: #CDE8DF;
+            border-left: 4px solid #1E6F5C;
+        }
+
+        /* Link da página que está aberta */
+        #menu a.ativo {
+            background-color: #1E6F5C;
+            color: white;
+            border-left: 4px solid #F39C12;
+        }
+
+        /* ===== Conteúdo principal ===== */
+        #main {
+            margin-left: 20%;
+            min-height: 450px;
+            padding: 20px 30px;
+            background-color: #FFFFFF;
+            line-height: 24px;
+        }
+
+        /* A cor e o tamanho do h2 estão no atributo style de cada página */
+        #main h2 {
+            border-bottom: 2px solid #1E6F5C;
+            padding-bottom: 8px;
+        }
+
+        #main h3 {
+            color: #145A4A;
+            margin-top: 28px;
+        }
+
+        #main a {
+            color: #1E6F5C;
+        }
+
+        /* Ícone ao lado do título da página */
+        #main h2 img {
+            vertical-align: middle;
+            margin-right: 8px;
+        }
+
+        /* ===== Caixas de destaque ===== */
+
+        /* Resposta rápida (verde) */
+        .rapido {
+            background-color: #E8F6F3;
+            border-left: 6px solid #1E6F5C;
+            padding: 5px 20px;
+            margin: 20px 0;
+        }
+
+        /* Atenção (amarela) */
+        .atencao {
+            background-color: #FEF5E7;
+            border-left: 6px solid #F39C12;
+            padding: 5px 20px;
+            margin: 20px 0;
+        }
+
+        /* Alerta (vermelha) */
+        .alerta {
+            background-color: #FDEDEC;
+            border-left: 6px solid #C0392B;
+            padding: 5px 20px;
+            margin: 20px 0;
+        }
+
+        /* Título dentro das caixas fica mais perto do topo */
+        #main .rapido h3,
+        #main .atencao h3,
+        #main .alerta h3 {
+            margin-top: 12px;
+        }
+
+        #main .alerta h3 {
+            color: #C0392B;
+        }
+
+        /* ===== Tabelas ===== */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+
+        th {
+            background-color: #1E6F5C;
+            color: white;
+            padding: 10px;
+            text-align: left;
+        }
+
+        td {
+            padding: 10px;
+            border-bottom: 1px solid #CCCCCC;
+            vertical-align: top;
+        }
+
+        /* Nome comercial embaixo do nome do remédio */
+        .exemplo {
+            display: block;
+            color: #777777;
+            font-size: 14px;
+        }
+
+        /* Texto das fontes no fim da página */
+        .fonte {
+            font-size: 13px;
+            color: #777777;
+            border-top: 1px solid #DDDDDD;
+            padding-top: 10px;
+            margin-top: 30px;
+        }
+
+        /* ===== Rodapé ===== */
+        #footer {
+            clear: both;
+            background-color: #1E6F5C;
+            color: white;
+            padding: 1px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        #footer p {
+            margin: 10px;
+        }
+
+        /* ===== Ajustes para celular (telas pequenas) ===== */
+        @media (max-width: 700px) {
+
+            #header h1 {
+                font-size: 24px;
+            }
+
+            /* O menu sai da lateral e vai para cima do conteúdo */
+            #menu {
+                float: none;
+                width: 100%;
+            }
+
+            #menu ul {
+                padding: 10px;
+                text-align: center;
+            }
+
+            #menu li {
+                display: inline-block;
+                margin: 3px;
+            }
+
+            #menu a,
+            #menu a:hover,
+            #menu a.ativo {
+                padding: 8px 10px;
+                border: 1px solid #CDE8DF;
+            }
+
+            #main {
+                margin-left: 0;
+                padding: 15px;
+            }
+
+            th,
+            td {
+                padding: 6px;
+                font-size: 14px;
+                line-height: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="site">
+
+        <div id="header">
+            <h1><img src="../img/logo.svg" alt="" width="42"> Guia Rápido de Remédios</h1>
+            <p>Remédios de farmácia sem receita, explicados de forma simples</p>
+        </div>
+
+        <div id="conteudo"><!-- abre a div conteudo -->
+
+            <div id="menu">
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="enjoo.html">Enjoo e vômito</a></li>
+                    <li><a href="dor-e-febre.html">Dor e febre</a></li>
+                    <li><a href="azia-gases-colica.html" class="ativo">Azia, gases e cólica</a></li>
+                    <li><a href="diarreia.html">Diarreia</a></li>
+                    <li><a href="alergia.html">Alergia</a></li>
+                </ul>
+            </div>
+
+            <div id="main">
+                <h2 style="color: rgb(30, 111, 92); font-size: 28px;"><img src="../img/azia.svg" alt="" width="48"> Azia, gases e cólica</h2>
+
+                <p>
+                    <strong>Azia</strong> é a queimação que sobe do estômago para o peito.
+                    <strong>Gases</strong> deixam a barriga estufada e desconfortável.
+                    <strong>Cólica</strong> é aquela dor em forma de aperto na barriga. Os três são
+                    comuns depois de comer demais ou de comer alimentos pesados.
+                </p>
+
+                <div class="rapido">
+                    <p>
+                        <strong style="color: #C0392B;">Resposta rápida:</strong> para <strong>azia</strong>, um antiácido;
+                        para <strong>gases</strong>, simeticona; para <strong>cólica</strong>,
+                        escopolamina. Todos podem ser comprados sem receita.
+                    </p>
+                </div>
+
+                <h3>Remédios sem receita</h3>
+
+                <table>
+                    <tr>
+                        <th>Remédio</th>
+                        <th>Para que serve</th>
+                        <th>Cuidados</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Antiácido com hidróxido de alumínio e hidróxido de magnésio</strong>
+                            <span class="exemplo">suspensão ou comprimido mastigável</span>
+                        </td>
+                        <td>Azia e dor no estômago por má digestão.</td>
+                        <td>
+                            Quem tem problema nos rins deve falar com o médico antes. Pode
+                            atrapalhar outros remédios, então tome em horários separados.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Sal de fruta</strong>
+                            <span class="exemplo">ex.: Eno</span>
+                        </td>
+                        <td>Azia e estômago pesado depois de comer.</td>
+                        <td>
+                            Tem bastante sódio: quem tem pressão alta ou faz dieta com pouco sal
+                            deve evitar.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Simeticona</strong>
+                            <span class="exemplo">ex.: Luftal</span>
+                        </td>
+                        <td>Gases e barriga estufada.</td>
+                        <td>
+                            Se a dor na barriga for muito forte ou durar mais de 36 horas, procure
+                            um médico.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Butilbrometo de escopolamina</strong>
+                            <span class="exemplo">ex.: Buscopan (drágeas ou gotas)</span>
+                        </td>
+                        <td>Cólica no estômago, no intestino e nas vias urinárias.</td>
+                        <td>
+                            Pode causar boca seca. Quem tem glaucoma ou problema no coração deve
+                            falar com o médico antes.
+                        </td>
+                    </tr>
+                </table>
+
+                <div class="atencao">
+                    <h3>Novidade: omeprazol sem receita</h3>
+                    <p>
+                        Em novembro de 2025, a Anvisa colocou o <strong>omeprazol 20 mg</strong> na
+                        lista de remédios sem receita, para quem tem azia em dois ou mais dias da
+                        semana. Mesmo assim, azia frequente não é normal: vale procurar um médico
+                        para descobrir a causa.
+                    </p>
+                </div>
+
+                <h3>O que também ajuda</h3>
+
+                <ul>
+                    <li>Comer devagar e em porções menores.</li>
+                    <li>Não deitar logo depois de comer.</li>
+                    <li>Diminuir frituras, refrigerante, café e bebida alcoólica.</li>
+                    <li>Para gases: evitar chiclete e bebidas com gás.</li>
+                </ul>
+
+                <div class="alerta">
+                    <h3>Procure um médico se:</h3>
+                    <ul>
+                        <li>
+                            A dor no peito for forte ou vier com falta de ar, suor frio ou dor no
+                            braço. Pode ser problema no coração: ligue <strong>192</strong> (SAMU).
+                        </li>
+                        <li>As fezes ficarem pretas ou tiver sangue no vômito.</li>
+                        <li>Sentir dor ou dificuldade para engolir, ou perder peso sem motivo.</li>
+                        <li>A dor na barriga for muito forte ou vier com febre.</li>
+                        <li>A azia voltar toda semana.</li>
+                    </ul>
+                </div>
+
+                <p class="fonte">
+                    Fontes: lista de MIPs da Anvisa (IN nº 285/2024, atualizada pela IN nº 404/2025,
+                    que incluiu o omeprazol 20 mg) e bulas dos medicamentos citados.
+                </p>
+            </div>
+
+        </div><!-- fecha a div conteudo -->
+
+        <div id="footer">
+            <p>Este site é informativo e não substitui a orientação de um médico ou farmacêutico.</p>
+            <p>Projeto de Desenvolvimento Front-end para Web - UNIPÊ | Feito por Jhonata Batista</p>
+        </div>
+
+    </div>
+</body>
+</html>

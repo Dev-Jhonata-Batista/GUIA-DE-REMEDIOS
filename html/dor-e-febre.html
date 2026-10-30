@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dor e febre - Guia Rápido de Remédios</title>
+    <style>
+        /* ===== Estilos da página (CSS interno) ===== */
+
+        /* Estilo geral da página */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #DDE8E4;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #333333;
+        }
+
+        /* Caixa que envolve o site inteiro */
+        #site {
+            max-width: 1100px;
+            margin: 0 auto;
+            background-color: #FFFFFF;
+        }
+
+        /* ===== Cabeçalho ===== */
+        #header {
+            background-color: #1E6F5C;
+            color: white;
+            padding: 9px;
+            text-align: center;
+        }
+
+        #header h1 {
+            font-size: 32px;
+            margin: 10px 0 5px 0;
+        }
+
+        #header img {
+            vertical-align: middle;
+        }
+
+        #header p {
+            font-size: 16px;
+            color: #D4EFE6;
+            margin: 0 0 10px 0;
+        }
+
+        /* ===== Conteúdo (junta o menu e o main) ===== */
+        #conteudo {
+            background-color: #EAF4F1;
+        }
+
+        /* ===== Menu lateral ===== */
+        #menu {
+            float: left;
+            width: 20%;
+        }
+
+        #menu ul {
+            list-style: none;
+            margin: 0;
+            padding: 20px 10px;
+        }
+
+        #menu li {
+            margin-bottom: 8px;
+        }
+
+        #menu a {
+            display: block;
+            padding: 10px;
+            color: #1E6F5C;
+            font-weight: bold;
+            text-decoration: none;
+            border-left: 4px solid #EAF4F1;
+        }
+
+        #menu a:hover {
+            background-color: #CDE8DF;
+            border-left: 4px solid #1E6F5C;
+        }
+
+        /* Link da página que está aberta */
+        #menu a.ativo {
+            background-color: #1E6F5C;
+            color: white;
+            border-left: 4px solid #F39C12;
+        }
+
+        /* ===== Conteúdo principal ===== */
+        #main {
+            margin-left: 20%;
+            min-height: 450px;
+            padding: 20px 30px;
+            background-color: #FFFFFF;
+            line-height: 24px;
+        }
+
+        /* A cor e o tamanho do h2 estão no atributo style de cada página */
+        #main h2 {
+            border-bottom: 2px solid #1E6F5C;
+            padding-bottom: 8px;
+        }
+
+        #main h3 {
+            color: #145A4A;
+            margin-top: 28px;
+        }
+
+        #main a {
+            color: #1E6F5C;
+        }
+
+        /* Ícone ao lado do título da página */
+        #main h2 img {
+            vertical-align: middle;
+            margin-right: 8px;
+        }
+
+        /* ===== Caixas de destaque ===== */
+
+        /* Resposta rápida (verde) */
+        .rapido {
+            background-color: #E8F6F3;
+            border-left: 6px solid #1E6F5C;
+            padding: 5px 20px;
+            margin: 20px 0;
+        }
+
+        /* Atenção (amarela) */
+        .atencao {
+            background-color: #FEF5E7;
+            border-left: 6px solid #F39C12;
+            padding: 5px 20px;
+            margin: 20px 0;
+        }
+
+        /* Alerta (vermelha) */
+        .alerta {
+            background-color: #FDEDEC;
+            border-left: 6px solid #C0392B;
+            padding: 5px 20px;
+            margin: 20px 0;
+        }
+
+        /* Título dentro das caixas fica mais perto do topo */
+        #main .rapido h3,
+        #main .atencao h3,
+        #main .alerta h3 {
+            margin-top: 12px;
+        }
+
+        #main .alerta h3 {
+            color: #C0392B;
+        }
+
+        /* ===== Tabelas ===== */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+
+        th {
+            background-color: #1E6F5C;
+            color: white;
+            padding: 10px;
+            text-align: left;
+        }
+
+        td {
+            padding: 10px;
+            border-bottom: 1px solid #CCCCCC;
+            vertical-align: top;
+        }
+
+        /* Nome comercial embaixo do nome do remédio */
+        .exemplo {
+            display: block;
+            color: #777777;
+            font-size: 14px;
+        }
+
+        /* Texto das fontes no fim da página */
+        .fonte {
+            font-size: 13px;
+            color: #777777;
+            border-top: 1px solid #DDDDDD;
+            padding-top: 10px;
+            margin-top: 30px;
+        }
+
+        /* ===== Rodapé ===== */
+        #footer {
+            clear: both;
+            background-color: #1E6F5C;
+            color: white;
+            padding: 1px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        #footer p {
+            margin: 10px;
+        }
+
+        /* ===== Ajustes para celular (telas pequenas) ===== */
+        @media (max-width: 700px) {
+
+            #header h1 {
+                font-size: 24px;
+            }
+
+            /* O menu sai da lateral e vai para cima do conteúdo */
+            #menu {
+                float: none;
+                width: 100%;
+            }
+
+            #menu ul {
+                padding: 10px;
+                text-align: center;
+            }
+
+            #menu li {
+                display: inline-block;
+                margin: 3px;
+            }
+
+            #menu a,
+            #menu a:hover,
+            #menu a.ativo {
+                padding: 8px 10px;
+                border: 1px solid #CDE8DF;
+            }
+
+            #main {
+                margin-left: 0;
+                padding: 15px;
+            }
+
+            th,
+            td {
+                padding: 6px;
+                font-size: 14px;
+                line-height: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="site">
+
+        <div id="header">
+            <h1><img src="../img/logo.svg" alt="" width="42"> Guia Rápido de Remédios</h1>
+            <p>Remédios de farmácia sem receita, explicados de forma simples</p>
+        </div>
+
+        <div id="conteudo"><!-- abre a div conteudo -->
+
+            <div id="menu">
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="enjoo.html">Enjoo e vômito</a></li>
+                    <li><a href="dor-e-febre.html" class="ativo">Dor e febre</a></li>
+                    <li><a href="azia-gases-colica.html">Azia, gases e cólica</a></li>
+                    <li><a href="diarreia.html">Diarreia</a></li>
+                    <li><a href="alergia.html">Alergia</a></li>
+                </ul>
+            </div>
+
+            <div id="main">
+                <h2 style="color: rgb(30, 111, 92); font-size: 28px;"><img src="../img/febre.svg" alt="" width="48"> Dor de cabeça e febre</h2>
+
+                <p>
+                    Dor de cabeça, dor no corpo e febre são sintomas muito comuns, principalmente
+                    em gripes e resfriados. Para casos leves, existem vários remédios que podem ser
+                    comprados sem receita.
+                </p>
+
+                <div class="rapido">
+                    <p>
+                        <strong style="color: #C0392B;">Resposta rápida:</strong> <strong>paracetamol</strong> ou
+                        <strong>dipirona</strong> servem para dor e febre. Se houver qualquer
+                        suspeita de <strong>dengue</strong>, não tome AAS (Aspirina) nem ibuprofeno.
+                    </p>
+                </div>
+
+                <h3>Remédios sem receita</h3>
+
+                <table>
+                    <tr>
+                        <th>Remédio</th>
+                        <th>Para que serve</th>
+                        <th>Cuidados</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Paracetamol</strong>
+                            <span class="exemplo">ex.: Tylenol</span>
+                        </td>
+                        <td>Dor leve a moderada e febre.</td>
+                        <td>
+                            Não passe da dose da bula: em excesso, faz mal ao fígado. Evite
+                            bebida alcoólica. Muitos antigripais já têm paracetamol na fórmula.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Dipirona</strong>
+                            <span class="exemplo">ex.: Novalgina</span>
+                        </td>
+                        <td>Dor e febre.</td>
+                        <td>Não use se já teve alergia a dipirona.</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Ibuprofeno</strong>
+                            <span class="exemplo">ex.: Advil, Alivium</span>
+                        </td>
+                        <td>Dor (inclusive muscular e cólica menstrual), febre e inflamação.</td>
+                        <td>
+                            Tome depois de comer, porque pode irritar o estômago. Evite se tiver
+                            gastrite, úlcera, problema nos rins ou suspeita de dengue.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Ácido acetilsalicílico (AAS)</strong>
+                            <span class="exemplo">ex.: Aspirina</span>
+                        </td>
+                        <td>Dor leve a moderada e febre.</td>
+                        <td>
+                            Não dê para crianças e adolescentes com gripe ou catapora. Pode
+                            irritar o estômago e aumentar sangramentos. Não use com suspeita de dengue.
+                        </td>
+                    </tr>
+                </table>
+
+                <div class="atencao">
+                    <h3>Atenção à dengue</h3>
+                    <p>
+                        Segundo o Ministério da Saúde, quem está com suspeita de dengue
+                        <strong>não deve</strong> tomar AAS nem anti-inflamatórios como ibuprofeno,
+                        diclofenaco e nimesulida, porque eles aumentam o risco de sangramento. Para
+                        dor e febre, o mais indicado é o paracetamol, e a dipirona pode ser uma
+                        alternativa. Na dúvida, procure um posto de saúde.
+                    </p>
+                </div>
+
+                <h3>Dicas importantes</h3>
+
+                <ul>
+                    <li>Não tome dois remédios com a mesma substância ao mesmo tempo (exemplo: paracetamol + antigripal com paracetamol).</li>
+                    <li>Respeite o intervalo entre as doses que está escrito na bula.</li>
+                    <li>Beba bastante água e descanse.</li>
+                </ul>
+
+                <div class="alerta">
+                    <h3>Procure um médico se:</h3>
+                    <ul>
+                        <li>A febre durar mais de 3 dias.</li>
+                        <li>A dor de cabeça for muito forte e começar de repente, ou vier com pescoço duro, confusão ou desmaio.</li>
+                        <li>Aparecerem manchas vermelhas na pele ou sangramento no nariz ou na gengiva.</li>
+                        <li>A dor não melhorar mesmo tomando o remédio do jeito certo.</li>
+                        <li>For bebê, criança pequena, grávida ou idoso.</li>
+                    </ul>
+                </div>
+
+                <p class="fonte">
+                    Fontes: lista de MIPs da Anvisa (IN nº 285/2024, atualizada pela IN nº 404/2025),
+                    bulas dos medicamentos citados e orientações do Ministério da Saúde sobre dengue.
+                </p>
+            </div>
+
+        </div><!-- fecha a div conteudo -->
+
+        <div id="footer">
+            <p>Este site é informativo e não substitui a orientação de um médico ou farmacêutico.</p>
+            <p>Projeto de Desenvolvimento Front-end para Web - UNIPÊ | Feito por Jhonata Batista</p>
+        </div>
+
+    </div>
+</body>
+</html>

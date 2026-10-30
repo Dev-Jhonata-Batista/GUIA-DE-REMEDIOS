@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enjoo e vômito - Guia Rápido de Remédios</title>
+    <style>
+        /* ===== Estilos da página (CSS interno) ===== */
+
+        /* Estilo geral da página */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #DDE8E4;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #333333;
+        }
+
+        /* Caixa que envolve o site inteiro */
+        #site {
+            max-width: 1100px;
+            margin: 0 auto;
+            background-color: #FFFFFF;
+        }
+
+        /* ===== Cabeçalho ===== */
+        #header {
+            background-color: #1E6F5C;
+            color: white;
+            padding: 9px;
+            text-align: center;
+        }
+
+        #header h1 {
+            font-size: 32px;
+            margin: 10px 0 5px 0;
+        }
+
+        #header img {
+            vertical-align: middle;
+        }
+
+        #header p {
+            font-size: 16px;
+            color: #D4EFE6;
+            margin: 0 0 10px 0;
+        }
+
+        /* ===== Conteúdo (junta o menu e o main) ===== */
+        #conteudo {
+            background-color: #EAF4F1;
+        }
+
+        /* ===== Menu lateral ===== */
+        #menu {
+            float: left;
+            width: 20%;
+        }
+
+        #menu ul {
+            list-style: none;
+            margin: 0;
+            padding: 20px 10px;
+        }
+
+        #menu li {
+            margin-bottom: 8px;
+        }
+
+        #menu a {
+            display: block;
+            padding: 10px;
+            color: #1E6F5C;
+            font-weight: bold;
+            text-decoration: none;
+            border-left: 4px solid #EAF4F1;
+        }
+
+        #menu a:hover {
+            background-color: #CDE8DF;
+            border-left: 4px solid #1E6F5C;
+        }
+
+        /* Link da página que está aberta */
+        #menu a.ativo {
+            background-color: #1E6F5C;
+            color: white;
+            border-left: 4px solid #F39C12;
+        }
+
+        /* ===== Conteúdo principal ===== */
+        #main {
+            margin-left: 20%;
+            min-height: 450px;
+            padding: 20px 30px;
+            background-color: #FFFFFF;
+            line-height: 24px;
+        }
+
+        /* A cor e o tamanho do h2 estão no atributo style de cada página */
+        #main h2 {
+            border-bottom: 2px solid #1E6F5C;
+            padding-bottom: 8px;
+        }
+
+        #main h3 {
+            color: #145A4A;
+            margin-top: 28px;
+        }
+
+        #main a {
+            color: #1E6F5C;
+        }
+
+        /* Ícone ao lado do título da página */
+        #main h2 img {
+            vertical-align: middle;
+            margin-right: 8px;
+        }
+
+        /* ===== Caixas de destaque ===== */
+
+        /* Resposta rápida (verde) */
+        .rapido {
+            background-color: #E8F6F3;
+            border-left: 6px solid #1E6F5C;
+            padding: 5px 20px;
+            margin: 20px 0;
+        }
+
+        /* Atenção (amarela) */
+        .atencao {
+            background-color: #FEF5E7;
+            border-left: 6px solid #F39C12;
+            padding: 5px 20px;
+            margin: 20px 0;
+        }
+
+        /* Alerta (vermelha) */
+        .alerta {
+            background-color: #FDEDEC;
+            border-left: 6px solid #C0392B;
+            padding: 5px 20px;
+            margin: 20px 0;
+        }
+
+        /* Título dentro das caixas fica mais perto do topo */
+        #main .rapido h3,
+        #main .atencao h3,
+        #main .alerta h3 {
+            margin-top: 12px;
+        }
+
+        #main .alerta h3 {
+            color: #C0392B;
+        }
+
+        /* ===== Tabelas ===== */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+
+        th {
+            background-color: #1E6F5C;
+            color: white;
+            padding: 10px;
+            text-align: left;
+        }
+
+        td {
+            padding: 10px;
+            border-bottom: 1px solid #CCCCCC;
+            vertical-align: top;
+        }
+
+        /* Nome comercial embaixo do nome do remédio */
+        .exemplo {
+            display: block;
+            color: #777777;
+            font-size: 14px;
+        }
+
+        /* Texto das fontes no fim da página */
+        .fonte {
+            font-size: 13px;
+            color: #777777;
+            border-top: 1px solid #DDDDDD;
+            padding-top: 10px;
+            margin-top: 30px;
+        }
+
+        /* ===== Rodapé ===== */
+        #footer {
+            clear: both;
+            background-color: #1E6F5C;
+            color: white;
+            padding: 1px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        #footer p {
+            margin: 10px;
+        }
+
+        /* ===== Ajustes para celular (telas pequenas) ===== */
+        @media (max-width: 700px) {
+
+            #header h1 {
+                font-size: 24px;
+            }
+
+            /* O menu sai da lateral e vai para cima do conteúdo */
+            #menu {
+                float: none;
+                width: 100%;
+            }
+
+            #menu ul {
+                padding: 10px;
+                text-align: center;
+            }
+
+            #menu li {
+                display: inline-block;
+                margin: 3px;
+            }
+
+            #menu a,
+            #menu a:hover,
+            #menu a.ativo {
+                padding: 8px 10px;
+                border: 1px solid #CDE8DF;
+            }
+
+            #main {
+                margin-left: 0;
+                padding: 15px;
+            }
+
+            th,
+            td {
+                padding: 6px;
+                font-size: 14px;
+                line-height: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="site">
+
+        <div id="header">
+            <h1><img src="../img/logo.svg" alt="" width="42"> Guia Rápido de Remédios</h1>
+            <p>Remédios de farmácia sem receita, explicados de forma simples</p>
+        </div>
+
+        <div id="conteudo"><!-- abre a div conteudo -->
+
+            <div id="menu">
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="enjoo.html" class="ativo">Enjoo e vômito</a></li>
+                    <li><a href="dor-e-febre.html">Dor e febre</a></li>
+                    <li><a href="azia-gases-colica.html">Azia, gases e cólica</a></li>
+                    <li><a href="diarreia.html">Diarreia</a></li>
+                    <li><a href="alergia.html">Alergia</a></li>
+                </ul>
+            </div>
+
+            <div id="main">
+                <h2 style="color: rgb(30, 111, 92); font-size: 28px;"><img src="../img/enjoo.svg" alt="" width="48"> Enjoo e vômito</h2>
+
+                <p>
+                    O enjoo (ou náusea) é aquela vontade de vomitar. Ele pode aparecer depois de
+                    comer demais, em viagens de carro ou de barco, por causa de uma virose, entre
+                    outros motivos.
+                </p>
+
+                <div class="rapido">
+                    <p>
+                        <strong style="color: #C0392B;">Resposta rápida:</strong> os remédios mais conhecidos para enjoo,
+                        como o Dramin, <strong>precisam de receita</strong>. Sem receita, dá para
+                        usar um <strong>antiácido</strong> (quando o enjoo vem de má digestão) e o
+                        <strong>soro de reidratação oral</strong> (para repor o que se perde
+                        vomitando).
+                    </p>
+                </div>
+
+                <h3>Remédios sem receita</h3>
+
+                <table>
+                    <tr>
+                        <th>Remédio</th>
+                        <th>Para que serve</th>
+                        <th>Cuidados</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Antiácido com hidróxido de alumínio e hidróxido de magnésio</strong>
+                            <span class="exemplo">suspensão ou comprimido mastigável</span>
+                        </td>
+                        <td>Enjoo junto com azia ou estômago pesado depois de comer.</td>
+                        <td>
+                            Quem tem problema nos rins deve falar com o médico antes. Pode
+                            atrapalhar outros remédios, então tome em horários separados.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Soro de reidratação oral</strong>
+                            <span class="exemplo">sais de reidratação</span>
+                        </td>
+                        <td>Repor a água e os sais que o corpo perde quando a pessoa vomita.</td>
+                        <td>
+                            Prepare do jeito que está na embalagem e beba aos poucos, em pequenos
+                            goles. Também é distribuído nos postos de saúde.
+                        </td>
+                    </tr>
+                </table>
+
+                <h3 style="color: #C0392B;">Esses precisam de receita</h3>
+
+                <p>
+                    Os remédios feitos especialmente para enjoo que mais aparecem nas farmácias
+                    têm na bula a frase <strong>"venda sob prescrição médica"</strong>. Ou seja,
+                    não devem ser tomados por conta própria:
+                </p>
+
+                <ul>
+                    <li>Dramin (dimenidrinato)</li>
+                    <li>Meclin (meclizina)</li>
+                    <li>Plasil (metoclopramida)</li>
+                    <li>Digesan (bromoprida)</li>
+                    <li>Vonau (ondansetrona)</li>
+                </ul>
+
+                <h3>O que também ajuda</h3>
+
+                <ul>
+                    <li>Comer pouco de cada vez e evitar comidas gordurosas.</li>
+                    <li>Beber líquidos devagar, em pequenos goles.</li>
+                    <li>Ficar em um lugar arejado e longe de cheiros fortes.</li>
+                    <li>Em viagens, sentar na frente e olhar para longe, sem ficar lendo no celular.</li>
+                </ul>
+
+                <div class="alerta">
+                    <h3>Procure um médico se:</h3>
+                    <ul>
+                        <li>O vômito não para e a pessoa não consegue segurar nem líquidos.</li>
+                        <li>O enjoo ou o vômito durar mais de 24 a 48 horas.</li>
+                        <li>Tiver sangue no vômito ou dor forte na barriga.</li>
+                        <li>Aparecerem sinais de desidratação: boca seca, pouco xixi, tontura ou muito cansaço.</li>
+                        <li>For bebê, criança pequena, idoso ou grávida.</li>
+                    </ul>
+                </div>
+
+                <p class="fonte">
+                    Fontes: lista de MIPs da Anvisa (IN nº 285/2024, atualizada pela IN nº 404/2025)
+                    e bulas dos medicamentos citados.
+                </p>
+            </div>
+
+        </div><!-- fecha a div conteudo -->
+
+        <div id="footer">
+            <p>Este site é informativo e não substitui a orientação de um médico ou farmacêutico.</p>
+            <p>Projeto de Desenvolvimento Front-end para Web - UNIPÊ | Feito por Jhonata Batista</p>
+        </div>
+
+    </div>
+</body>
+</html>

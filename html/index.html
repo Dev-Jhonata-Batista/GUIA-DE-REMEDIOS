@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Início - Guia Rápido de Remédios</title>
+    <style>
+        /* ===== Estilos da página (CSS interno) ===== */
+
+        /* Estilo geral da página */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #DDE8E4;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #333333;
+        }
+
+        /* Caixa que envolve o site inteiro */
+        #site {
+            max-width: 1100px;
+            margin: 0 auto;
+            background-color: #FFFFFF;
+        }
+
+        /* ===== Cabeçalho ===== */
+        #header {
+            background-color: #1E6F5C;
+            color: white;
+            padding: 9px;
+            text-align: center;
+        }
+
+        #header h1 {
+            font-size: 32px;
+            margin: 10px 0 5px 0;
+        }
+
+        #header img {
+            vertical-align: middle;
+        }
+
+        #header p {
+            font-size: 16px;
+            color: #D4EFE6;
+            margin: 0 0 10px 0;
+        }
+
+        /* ===== Conteúdo (junta o menu e o main) ===== */
+        #conteudo {
+            background-color: #EAF4F1;
+        }
+
+        /* ===== Menu lateral ===== */
+        #menu {
+            float: left;
+            width: 20%;
+        }
+
+        #menu ul {
+            list-style: none;
+            margin: 0;
+            padding: 20px 10px;
+        }
+
+        #menu li {
+            margin-bottom: 8px;
+        }
+
+        #menu a {
+            display: block;
+            padding: 10px;
+            color: #1E6F5C;
+            font-weight: bold;
+            text-decoration: none;
+            border-left: 4px solid #EAF4F1;
+        }
+
+        #menu a:hover {
+            background-color: #CDE8DF;
+            border-left: 4px solid #1E6F5C;
+        }
+
+        /* Link da página que está aberta */
+        #menu a.ativo {
+            background-color: #1E6F5C;
+            color: white;
+            border-left: 4px solid #F39C12;
+        }
+
+        /* ===== Conteúdo principal ===== */
+        #main {
+            margin-left: 20%;
+            min-height: 450px;
+            padding: 20px 30px;
+            background-color: #FFFFFF;
+            line-height: 24px;
+        }
+
+        /* A cor e o tamanho do h2 estão no atributo style de cada página */
+        #main h2 {
+            border-bottom: 2px solid #1E6F5C;
+            padding-bottom: 8px;
+        }
+
+        #main h3 {
+            color: #145A4A;
+            margin-top: 28px;
+        }
+
+        #main a {
+            color: #1E6F5C;
+        }
+
+        /* Ícone ao lado do título da página */
+        #main h2 img {
+            vertical-align: middle;
+            margin-right: 8px;
+        }
+
+        /* ===== Caixas de destaque ===== */
+
+        /* Resposta rápida (verde) */
+        .rapido {
+            background-color: #E8F6F3;
+            border-left: 6px solid #1E6F5C;
+            padding: 5px 20px;
+            margin: 20px 0;
+        }
+
+        /* Atenção (amarela) */
+        .atencao {
+            background-color: #FEF5E7;
+            border-left: 6px solid #F39C12;
+            padding: 5px 20px;
+            margin: 20px 0;
+        }
+
+        /* Alerta (vermelha) */
+        .alerta {
+            background-color: #FDEDEC;
+            border-left: 6px solid #C0392B;
+            padding: 5px 20px;
+            margin: 20px 0;
+        }
+
+        /* Título dentro das caixas fica mais perto do topo */
+        #main .rapido h3,
+        #main .atencao h3,
+        #main .alerta h3 {
+            margin-top: 12px;
+        }
+
+        #main .alerta h3 {
+            color: #C0392B;
+        }
+
+        /* ===== Tabelas ===== */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+
+        th {
+            background-color: #1E6F5C;
+            color: white;
+            padding: 10px;
+            text-align: left;
+        }
+
+        td {
+            padding: 10px;
+            border-bottom: 1px solid #CCCCCC;
+            vertical-align: top;
+        }
+
+        /* Nome comercial embaixo do nome do remédio */
+        .exemplo {
+            display: block;
+            color: #777777;
+            font-size: 14px;
+        }
+
+        /* Tabela de sintomas da página inicial */
+        .sintomas td {
+            width: 33%;
+            text-align: center;
+            border: 1px solid #DDDDDD;
+            padding: 15px;
+        }
+
+        .sintomas a {
+            display: block;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            margin-top: 5px;
+        }
+
+        .sintomas a:hover {
+            color: #F39C12;
+        }
+
+        /* Quadro de emergência na tabela de sintomas */
+        .emergencia {
+            display: block;
+            font-size: 18px;
+            color: #C0392B;
+            margin-top: 5px;
+        }
+
+        .sintomas p {
+            margin: 5px 0 0 0;
+            font-size: 14px;
+            color: #666666;
+        }
+
+        /* Cores das tarjas */
+        .tarja {
+            display: block;
+            width: 140px;
+            padding: 6px;
+            text-align: center;
+            font-weight: bold;
+            border: 1px solid #999999;
+        }
+
+        .sem-tarja {
+            background-color: #FFFFFF;
+            color: #333333;
+        }
+
+        .tarja-vermelha {
+            background-color: #C0392B;
+            color: white;
+        }
+
+        .tarja-preta {
+            background-color: #000000;
+            color: white;
+        }
+
+        /* Texto das fontes no fim da página */
+        .fonte {
+            font-size: 13px;
+            color: #777777;
+            border-top: 1px solid #DDDDDD;
+            padding-top: 10px;
+            margin-top: 30px;
+        }
+
+        /* ===== Rodapé ===== */
+        #footer {
+            clear: both;
+            background-color: #1E6F5C;
+            color: white;
+            padding: 1px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        #footer p {
+            margin: 10px;
+        }
+
+        /* ===== Ajustes para celular (telas pequenas) ===== */
+        @media (max-width: 700px) {
+
+            #header h1 {
+                font-size: 24px;
+            }
+
+            /* O menu sai da lateral e vai para cima do conteúdo */
+            #menu {
+                float: none;
+                width: 100%;
+            }
+
+            #menu ul {
+                padding: 10px;
+                text-align: center;
+            }
+
+            #menu li {
+                display: inline-block;
+                margin: 3px;
+            }
+
+            #menu a,
+            #menu a:hover,
+            #menu a.ativo {
+                padding: 8px 10px;
+                border: 1px solid #CDE8DF;
+            }
+
+            #main {
+                margin-left: 0;
+                padding: 15px;
+            }
+
+            th,
+            td {
+                padding: 6px;
+                font-size: 14px;
+                line-height: 20px;
+            }
+
+            /* Na página inicial, cada sintoma fica em uma linha */
+            .sintomas td {
+                display: block;
+                width: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="site">
+
+        <div id="header">
+            <h1><img src="../img/logo.svg" alt="" width="42"> Guia Rápido de Remédios</h1>
+            <p>Remédios de farmácia sem receita, explicados de forma simples</p>
+        </div>
+
+        <div id="conteudo"><!-- abre a div conteudo -->
+
+            <div id="menu">
+                <ul>
+                    <li><a href="index.html" class="ativo">Início</a></li>
+                    <li><a href="enjoo.html">Enjoo e vômito</a></li>
+                    <li><a href="dor-e-febre.html">Dor e febre</a></li>
+                    <li><a href="azia-gases-colica.html">Azia, gases e cólica</a></li>
+                    <li><a href="diarreia.html">Diarreia</a></li>
+                    <li><a href="alergia.html">Alergia</a></li>
+                </ul>
+            </div>
+
+            <div id="main">
+                <h2 style="color: rgb(30, 111, 92); font-size: 28px;">Bem-vindo!</h2>
+
+                <p style="font-size: 18px;">
+                    Sabe quando você está com enjoo, dor de cabeça ou azia e não sabe qual
+                    remédio pode tomar? Este site reúne, de forma simples e rápida, os remédios
+                    mais comuns que podem ser comprados <strong>sem receita</strong> na farmácia,
+                    para que serve cada um e quais cuidados ter.
+                </p>
+
+                <div class="rapido">
+                    <h3>Como usar o site</h3>
+                    <ol>
+                        <li>Escolha o seu sintoma no menu ou na tabela abaixo.</li>
+                        <li>Leia a <strong>resposta rápida</strong> no começo da página.</li>
+                        <li>Confira os cuidados e quando é hora de procurar um médico.</li>
+                    </ol>
+                </div>
+
+                <h3>Escolha o seu sintoma</h3>
+
+                <table class="sintomas">
+                    <tr>
+                        <td>
+                            <img src="../img/enjoo.svg" alt="Rosto enjoado" width="80">
+                            <a href="enjoo.html">Enjoo e vômito</a>
+                            <p>Mal-estar no estômago e vontade de vomitar</p>
+                        </td>
+                        <td>
+                            <img src="../img/febre.svg" alt="Termômetro" width="80">
+                            <a href="dor-e-febre.html">Dor e febre</a>
+                            <p>Dor de cabeça, dor no corpo e febre</p>
+                        </td>
+                        <td>
+                            <img src="../img/azia.svg" alt="Chama de fogo" width="80">
+                            <a href="azia-gases-colica.html">Azia, gases e cólica</a>
+                            <p>Queimação, barriga estufada e cólica</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="../img/diarreia.svg" alt="Gota de água" width="80">
+                            <a href="diarreia.html">Diarreia</a>
+                            <p>Intestino solto e risco de desidratação</p>
+                        </td>
+                        <td>
+                            <img src="../img/alergia.svg" alt="Flor com pólen" width="80">
+                            <a href="alergia.html">Alergia</a>
+                            <p>Espirros, nariz escorrendo e coceira</p>
+                        </td>
+                        <td>
+                            <img src="../img/cuidados.svg" alt="Escudo com uma cruz" width="80">
+                            <strong class="emergencia">Emergência? Ligue 192</strong>
+                            <p>SAMU, atendimento gratuito em todo o Brasil</p>
+                        </td>
+                    </tr>
+                </table>
+
+                <h3>O que é um remédio "sem receita"?</h3>
+
+                <p>
+                    São os <strong>MIPs</strong> (Medicamentos Isentos de Prescrição). A
+                    <strong>Anvisa</strong>, que controla os remédios no Brasil, tem uma lista
+                    oficial com eles. São remédios para problemas leves e passageiros. Para saber
+                    se um remédio precisa de receita, olhe a tarja da caixa:
+                </p>
+
+                <table>
+                    <tr>
+                        <th>Tarja</th>
+                        <th>O que significa</th>
+                    </tr>
+                    <tr>
+                        <td><span class="tarja sem-tarja">Sem tarja</span></td>
+                        <td>Remédio isento de prescrição (MIP). Pode ser comprado sem receita.</td>
+                    </tr>
+                    <tr>
+                        <td><span class="tarja tarja-vermelha">Tarja vermelha</span></td>
+                        <td>
+                            Precisa de receita médica. Em alguns casos, como nos antibióticos, a
+                            farmácia fica com a receita.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="tarja tarja-preta">Tarja preta</span></td>
+                        <td>
+                            Remédio controlado, que age no sistema nervoso. Precisa de uma receita
+                            especial, que fica retida na farmácia.
+                        </td>
+                    </tr>
+                </table>
+
+                <h3>Cuidados antes de tomar</h3>
+
+                <p>
+                    Remédio sem receita também é remédio: ele pode causar alergia e fazer mal se
+                    for tomado em excesso ou junto com outros remédios.
+                </p>
+
+                <ul>
+                    <li>Leia a bula, principalmente as partes "quando não devo usar" e "como devo usar".</li>
+                    <li>Respeite a dose e o intervalo entre as doses.</li>
+                    <li>Não tome dois remédios com a mesma substância ao mesmo tempo.</li>
+                    <li>
+                        Grávidas, mulheres que amamentam, crianças, idosos e quem tem alguma doença
+                        ou já toma outros remédios devem pedir orientação antes.
+                    </li>
+                    <li>Guarde os remédios em lugar seco, longe do sol e longe do alcance de crianças.</li>
+                </ul>
+
+                <div class="atencao">
+                    <p>
+                        <strong>Dica:</strong> o farmacêutico pode tirar suas dúvidas de graça na
+                        hora da compra. Sempre conte se você tem alguma doença, se está grávida ou
+                        se já toma outro remédio.
+                    </p>
+                </div>
+
+                <div class="alerta">
+                    <h3>Telefones úteis</h3>
+                    <ul>
+                        <li><strong>192</strong> - SAMU, para emergências médicas.</li>
+                        <li>
+                            <strong>0800 722 6001</strong> - Disque-Intoxicação da Anvisa, ligação
+                            gratuita, para quando alguém toma remédio demais ou por engano.
+                        </li>
+                    </ul>
+                </div>
+
+                <p class="fonte">
+                    As informações deste site foram tiradas da lista oficial de MIPs da Anvisa
+                    (Instrução Normativa nº 285/2024, atualizada pela IN nº 404/2025), das bulas
+                    dos medicamentos e de orientações do Ministério da Saúde.
+                </p>
+            </div>
+
+        </div><!-- fecha a div conteudo -->
+
+        <div id="footer">
+            <p>Este site é informativo e não substitui a orientação de um médico ou farmacêutico.</p>
+            <p>Projeto de Desenvolvimento Front-end para Web - UNIPÊ | Feito por Jhonata Batista</p>
+        </div>
+
+    </div>
+</body>
+</html>
